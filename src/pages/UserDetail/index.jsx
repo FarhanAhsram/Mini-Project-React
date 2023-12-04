@@ -5,13 +5,30 @@ import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
 
 const UserDetail = () => {
+  const [toggle, setToggle] = useState(false);
   const [user, setUser] = useState({});
 
   const param = useParams();
 
+  const Toggle = () => {
+    setToggle(!toggle);
+  };
+
   useEffect(() => {
     getDetailUser();
+    handleSize();
+    window.addEventListener("resize", handleSize);
+
+    return () => {
+      window.removeEventListener("resize", handleSize);
+    };
   }, []);
+
+  const handleSize = () => {
+    if (window.innerWidth > 768) {
+      setToggle(false);
+    }
+  };
 
   const getDetailUser = () => {
     axios
@@ -27,13 +44,18 @@ const UserDetail = () => {
 
   return (
     <div className="d-flex">
-      <div className="w-auto">
+      <div className={toggle ? "d-none" : "w-auto position-fixed"}>
         <Sidebar />
       </div>
-      <div className="col bg-light vh-100">
-        <Navbar />
 
-        <div class="container mt-3">
+      <div className={toggle ? "d-none" : "invisible"}>
+        <Sidebar />
+      </div>
+
+      <div className="col bg-light vh-100">
+        <Navbar Toggle={Toggle} />
+
+        <div className="container mt-3">
           <div className="container">
             <div className="d-flex justify-content-center">
               <img
