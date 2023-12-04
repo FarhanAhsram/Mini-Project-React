@@ -62,10 +62,10 @@ const Login = () => {
     <div className="wrapper">
       <div className="container main">
         <div className="row row-form">
-          <div className="col-md-6 left-side">
-            <img src="images/google.png" alt="" className="img-logo" />
-            <div className="text">
-              <p>Hello World</p>
+          <div className="col-md-6 left-side-login">
+            <img src="images/react.png" alt="" className="img-logo" />
+            <div className="text text-center">
+              <p className="fs-3">Mini Project React</p>
             </div>
           </div>
           <div className="col-md-6 right-side">
@@ -95,7 +95,7 @@ const Login = () => {
                 <label htmlFor="">Password</label>
               </div>
               <div className="input-field">
-                <button className="btn sign-in" onClick={onLogin}>
+                <button className="btn sign-in-login" onClick={onLogin}>
                   Login
                 </button>
               </div>

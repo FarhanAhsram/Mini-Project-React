@@ -40,7 +40,7 @@ const Sidebar = () => {
             onClick={(e) => setActive(3)}
           >
             <span className="p-1 text-white text-decoration-none">
-              <i className="bi bi-table me-3 fs-4"></i>
+              <i className="bi bi-person me-3 fs-4"></i>
               <span className="fs-4">
                 Details
               </span>

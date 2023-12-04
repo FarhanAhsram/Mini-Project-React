@@ -105,9 +105,9 @@ const Register = () => {
             </div>
           </div>
           <div className="col-md-6 left-side">
-            <img src="images/google.png" alt="" className="img-logo" />
-            <div className="text">
-              <p>Hello World</p>
+            <img src="images/react.png" alt="" className="img-logo" />
+            <div className="text text-center">
+              <p className="fs-3">Mini Project React</p>
             </div>
           </div>
         </div>

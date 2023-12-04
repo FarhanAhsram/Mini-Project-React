@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
-import "./style.css";
 
 const UserDetail = () => {
   const [user, setUser] = useState({});
@@ -31,20 +30,31 @@ const UserDetail = () => {
       <div className="w-auto">
         <Sidebar />
       </div>
-      <div className="col">
+      <div className="col bg-light vh-100">
         <Navbar />
 
         <div class="container mt-3">
-          <div class="row">
-            <div class="col-md-7">
-              <img class="img-fluid detail-img mb-2" src={user.avatar} alt="" />
+          <div className="container">
+            <div className="d-flex justify-content-center">
+              <img
+                className="img-fluid mb-2"
+                src={user.avatar}
+                alt=""
+                style={{width: 200}}
+              />
             </div>
-            <div class="col-md-5">
-              <h2 class="mb-3">
-                {user.first_name} {user.last_name}
-              </h2>
-              <p>{user.email}</p>
-            </div>
+            <h1 className="d-flex justify-content-center">
+              {user.first_name} {user.last_name}
+            </h1>
+            <p className="d-flex justify-content-center">{user.email}</p>
+            <p className="" style={{textAlign: "justify"}}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+              eligendi similique delectus blanditiis facilis, non voluptatibus
+              consequuntur! Sunt nam placeat qui quia obcaecati, nulla quo ad
+              libero dolore, facilis eaque earum sit? Rem magni explicabo modi
+              molestiae illo ex, iusto hic voluptatem quidem nulla libero, dolor
+              vel! Consequuntur sequi aperiam ratione rem hic soluta. Odio eum
+            </p>
           </div>
         </div>
       </div>

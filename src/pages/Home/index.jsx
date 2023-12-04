@@ -83,9 +83,10 @@ const Home = () => {
                 <ul className="pagination justify-content-center">
                   <li className="page-item">
                     <button
-                      className="page-link"
+                      className="page-link bg-dark"
                       onClick={handleBack}
                       disabled={paging.currentPage === 1}
+                      style={{color: "white"}}
                     >
                       Back
                     </button>
@@ -97,9 +98,10 @@ const Home = () => {
                   </li>
                   <li className="page-item">
                     <button
-                      className="page-link"
+                      className="page-link bg-dark"
                       onClick={handleNext}
                       disabled={paging.currentPage === paging.totalPages}
+                      style={{color: "white"}}
                     >
                       Next
                     </button>
@@ -115,14 +117,14 @@ const Home = () => {
                     <div className="card mt-3">
                       <img
                         src={item.avatar}
-                        className="card-img-top"
+                        className="card-img-top img-fluid"
                         alt="User Image"
                       />
                       <div className="card-body">
                         <h5 className="card-title">{item.first_name}</h5>
                       </div>
                       <Link to={`/user/${item.id}`}>
-                        <button class="btn btn-primary btn-detail">Detail</button>
+                        <button class="btn btn-dark btn-detail p-2 mb-2">Detail</button>
                       </Link>
                     </div>
                   </div>
