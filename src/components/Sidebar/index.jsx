@@ -9,7 +9,7 @@ const Sidebar = () => {
       <div>
         <a href="" className="p-3 text-white text-decoration-none">
           <i className="bi bi-code-slash fs-4 me-4"></i>
-          <span className="fs-4">Hello World</span>
+          <span className="fs-4">React</span>
         </a>
         <hr className="text-secondary" />
         <ul className="nav nav-pills flex-column mt-3">
@@ -42,7 +42,7 @@ const Sidebar = () => {
             <span className="p-1 text-white text-decoration-none">
               <i className="bi bi-table me-3 fs-4"></i>
               <span className="fs-4">
-                Orders
+                Details
               </span>
             </span>
           </li>

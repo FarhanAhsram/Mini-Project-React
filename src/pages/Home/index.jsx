@@ -35,7 +35,7 @@ const Home = () => {
 
   const getUsers = () => {
     axios
-      .get(`https://reqres.in/api/users?per_page=5&page=${paging.currentPage}`)
+      .get(`https://reqres.in/api/users?per_page=6&page=${paging.currentPage}`)
       .then((response) => {
         // console.log(response);
         setUsers(response.data.data);
@@ -76,44 +76,59 @@ const Home = () => {
       <div className="col">
         <Navbar Toggle={Toggle} />
 
-        <div className="pagination-container bg-light">
-          <button
-            className="pagination-button btn btn-primary"
-            onClick={handleBack}
-            disabled={paging.currentPage === 1}
-          >
-            Back
-          </button>
-          <h2>{paging.currentPage}</h2>
-          <button
-            className="pagination-button btn btn-primary"
-            onClick={handleNext}
-            disabled={paging.currentPage === paging.totalPages}
-          >
-            Next
-          </button>
-        </div>
-        <div className="p-3 bg-light">
+        <div className="p-3 bg-light vh-100">
           <div className="container-fluid">
-            {users.map((item) => (
-              <div className="row">
-                <div className="col-12 col-sm-6 col-md-6 col-lg-4 p-3 bg-light">
-                  <div className="d-flex justify-content-around py-2 px-2 align-items-center bg-white border rounded border-secondary shadow-sm">
-                    <img src={item.avatar} alt="" className="border rounded" />
-                    <div>
+            <div className="container page-layout">
+              <nav aria-label="page-navigation">
+                <ul className="pagination justify-content-center">
+                  <li className="page-item">
+                    <button
+                      className="page-link"
+                      onClick={handleBack}
+                      disabled={paging.currentPage === 1}
+                    >
+                      Back
+                    </button>
+                  </li>
+                  <li className="page-item">
+                    <p href="" className="page-link" style={{ color: "black" }}>
+                      Page {paging.currentPage}
+                    </p>
+                  </li>
+                  <li className="page-item">
+                    <button
+                      className="page-link"
+                      onClick={handleNext}
+                      disabled={paging.currentPage === paging.totalPages}
+                    >
+                      Next
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div className="container">
+              <div className="row d-flex justify-content-center">
+                {users.map((item) => (
+                  <div className="col-4 col-card">
+                    <div className="card mt-3">
+                      <img
+                        src={item.avatar}
+                        className="card-img-top"
+                        alt="User Image"
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title">{item.first_name}</h5>
+                      </div>
                       <Link to={`/user/${item.id}`}>
-                        <button
-                          href="#"
-                          className="btn btn-primary btn-detail mb-2"
-                        >
-                          Detail
-                        </button>
+                        <button class="btn btn-primary btn-detail">Detail</button>
                       </Link>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
