@@ -1,0 +1,19 @@
+.sidebar{
+  height: 100vh;
+}
+
+.sidebar ul li:hover {
+  background-color: gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover a {
+  color: white;
+}
+
+.active {
+  background-color: gray;
+  border-radius: 5px;
+  color: white;
+}
